@@ -3,8 +3,8 @@ This module lets you practice DEBUGGING when RUN-TIME EXCEPTIONS occur.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Dave Seelye.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -106,8 +106,8 @@ def run_test_all():
 
     # Test broken_2:
     window = rg.RoseWindow(title='Testing BROKEN_2')
-    broken_2(50, 75, window)  # Test 1 of broken_2
-    broken_2(100, 150, window)  # Test 2 of broken_2
+    broken_2(50, 75, radius, window)  # Test 1 of broken_2
+    broken_2(100, 150, radius, window)  # Test 2 of broken_2
     window.close_on_mouse_click()
 
     # Test broken_3:
@@ -155,7 +155,7 @@ def run_test_all():
 
 
 # -----------------------------------------------------------------------------
-# TODO: 3. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
+# DONE: 3. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
 #          to correct the mistake(s) in the following function.
 # -----------------------------------------------------------------------------
 def broken_1(circle, window):
@@ -175,7 +175,7 @@ def broken_1(circle, window):
       :type window: rg.RoseWindow
     """
     circle.attach_to(window)
-    circle2 = rg.Circle(circle.radius * 2)
+    circle2 = rg.Circle(circle.center, circle.radius * 2)
     circle2.attach_to(window)
     window.render()
 
@@ -184,7 +184,7 @@ def broken_1(circle, window):
 # TODO: 4. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
 #          to correct the mistake(s) in the following function.
 # -----------------------------------------------------------------------------
-def broken_2(x, y, window):
+def broken_2(x, y, radius, window):
     """
     What comes in: Positive integers x and y, and an rg.RoseWindow.
     What goes out:  Nothing (i.e., None).
@@ -199,7 +199,8 @@ def broken_2(x, y, window):
       :type y:      int
       :type window: rg.RoseWindow
       """
-    circle = rg.Circle((x, y), 33)
+    radius = 33
+    circle = rg.Circle(rg.Point(x, y), radius, 33)
     circle.attach_to(window)
     window.render()
 
@@ -232,6 +233,7 @@ def broken_3(n, point, length, distance_between_lines, window):
       :type distance_between_lines: int
       :type window:                 rg.RoseWindow
     """
+    point = rg.Point
     a = rg.Point(point.x, point.y)
     b = rg.Point(point.x, point.y + length)
 
@@ -262,6 +264,7 @@ def broken_4(x, y, radius, window):
       :type radius: int
       :type window: rg.RoseWindow
       """
+    window = rg.RoseWindow
     circle = rg.Circle(rg.Point(x, y), 'radius')
     circle.fill_color = 'green'
     circle.attach_to(window)
