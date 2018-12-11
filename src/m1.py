@@ -273,7 +273,7 @@ def broken_4(x, y, radius, window):
 
 
 # -----------------------------------------------------------------------------
-# TODO: 7. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
+# DONE: 7. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
 #          to correct the mistake(s) in the following function.
 # -----------------------------------------------------------------------------
 def broken_5(circle, window):
@@ -308,12 +308,13 @@ def broken_6(n):
       1 + 1/2 + 1/3 + ... + 1/n.
     Side effects:   None.
     """
-    total = 0
+    total = 1
     for k in range(n + 1):
-        total = total + 1 / k
-
+            if k == 0:
+                total = 0
+            else:
+                total = total + 1 / k
     return total
-
 
 # -----------------------------------------------------------------------------
 # TODO: 9. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
