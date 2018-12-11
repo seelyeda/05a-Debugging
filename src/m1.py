@@ -265,11 +265,11 @@ def broken_4(x, y, radius, window):
       :type radius: int
       :type window: rg.RoseWindow
       """
-    window = rg.RoseWindow
+    #window = rg.RoseWindow
     circle = rg.Circle(rg.Point(x, y), radius)
-    circle.fill_color = 'green'
+    circle.fill_color = 'lime green'
     circle.attach_to(window)
-    window.render()
+    window.render(0.5)
 
 
 # -----------------------------------------------------------------------------
