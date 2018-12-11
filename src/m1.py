@@ -10,7 +10,7 @@ import rosegraphics as rg
 
 ###############################################################################
 #
-# TODO: 2. READ these instructions, ASKING QUESTIONS as needed.
+# DONE: 2. READ these instructions, ASKING QUESTIONS as needed.
 #
 #   This module contains 7 "broken" functions.
 #
@@ -105,6 +105,7 @@ def run_test_all():
     window.close_on_mouse_click()
 
     # Test broken_2:
+    radius = 33
     window = rg.RoseWindow(title='Testing BROKEN_2')
     broken_2(50, 75, radius, window)  # Test 1 of broken_2
     broken_2(100, 150, radius, window)  # Test 2 of broken_2
@@ -181,7 +182,7 @@ def broken_1(circle, window):
 
 
 # -----------------------------------------------------------------------------
-# TODO: 4. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
+# DONE: 4. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
 #          to correct the mistake(s) in the following function.
 # -----------------------------------------------------------------------------
 def broken_2(x, y, radius, window):
@@ -200,7 +201,7 @@ def broken_2(x, y, radius, window):
       :type window: rg.RoseWindow
       """
     radius = 33
-    circle = rg.Circle(rg.Point(x, y), radius, 33)
+    circle = rg.Circle(rg.Point(x, y), radius)
     circle.attach_to(window)
     window.render()
 
@@ -233,9 +234,9 @@ def broken_3(n, point, length, distance_between_lines, window):
       :type distance_between_lines: int
       :type window:                 rg.RoseWindow
     """
-    point = rg.Point
+    point = rg.Point()
     a = rg.Point(point.x, point.y)
-    b = rg.Point(point.x, point.y + length)
+    b = rg.Point(point.x, (point.y + length))
 
     for _ in range(n):
         line = rg.Line(a, b)
