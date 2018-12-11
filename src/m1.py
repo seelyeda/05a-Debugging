@@ -246,7 +246,7 @@ def broken_3(n, point, length, distance_between_lines, window):
         b.x = b.x + distance_between_lines
 
 # -----------------------------------------------------------------------------
-# TODO: 6. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
+# DONE: 6. Follow the INSTRUCTIONS AT THE TOP OF THIS MODULE
 #          to correct the mistake(s) in the following function.
 # -----------------------------------------------------------------------------
 def broken_4(x, y, radius, window):
@@ -291,7 +291,7 @@ def broken_5(circle, window):
       :type window: rg.RoseWindow
     """
     circle.attach_to(window)
-    square = rg.Square(circle.center)
+    square = rg.Square(circle.center, 2*circle.radius)
     square.outline_color = circle.fill_color
     square.attach_to(window)
     window.render()
